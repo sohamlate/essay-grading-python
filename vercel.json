@@ -3,9 +3,6 @@
     "build": {
         "env": {
             "PYTHON_VERSION": "3.11.9"
-        },
-        "commands": {
-            "install": "pip install --upgrade pip && pip install -r requirements.txt"
         }
     },
     "builds": [
