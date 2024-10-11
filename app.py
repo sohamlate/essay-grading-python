@@ -117,5 +117,7 @@ def create_task2():
     return Response(render_template("webapp/mainpage.html"), status=200, mimetype="text/html")
 
 
+if __name__=='__main__':
+    app.run(debug=True)
 
     
