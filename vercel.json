@@ -1,9 +1,19 @@
 {
     "version": 2,
+    "build": {
+        "env": {
+            "PYTHON_VERSION": "3.11.9"
+        },
+        "commands": {
+            "install": "pip install --upgrade pip && pip install -r requirements.txt"
+        }
+    },
     "builds": [
         {"src": "site_1.py", "use": "@vercel/python"}
     ],
-    "routes": [
-        {"src": "/(.*)", "dest": "app.py"}
-    ]
+    "functions": {
+        "api/**/*.py": {
+            "runtime": "python3.11"
+        }
+    }
 }
