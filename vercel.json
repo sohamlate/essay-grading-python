@@ -10,10 +10,6 @@
     },
     "builds": [
         {"src": "site_1.py", "use": "@vercel/python"}
-    ],
-    "functions": {
-        "api/**/*.py": {
-            "runtime": "python3.11"
-        }
-    }
+    ]
+   
 }
