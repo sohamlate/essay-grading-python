@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template,url_for,jsonify
+from flask import Flask, Response,request,render_template,url_for,jsonify
 import site
 import numpy as np
 import pandas as pd
@@ -95,7 +95,7 @@ def convertToVec(text):
         return str(round(preds[0][0]))
 
         
-app = Flask(__name__)
+app = Flask(__name__ )
 CORS(app)
 
 
@@ -110,8 +110,12 @@ def create_task():
         return jsonify({'score': score}), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    
+
+@app.route('/', methods=['GET'])
+def create_task2():
+    return Response(render_template("webapp/mainpage.html"), status=200, mimetype="text/html")
 
 
-if __name__=='__main__':
-    app.run(debug=True)
+
     
